@@ -1,6 +1,6 @@
 bytes_totales = int(input("Introduce el numero de bytes: "))
 
-# Sistema decimal (SI): 1 KB = 1000 bytes, 1 MB = 1000 KB, 1 GB = 1000 MB
+# 1 KB = 1000 bytes, 1 MB = 1000 KB, 1 GB = 1000 MB
 resto = bytes_totales
 gb = resto // 1000000000
 resto = resto % 1000000000
@@ -23,7 +23,7 @@ print(
     "bytes",
 )
 
-# Sistema binario (IEC): 1 KiB = 1024 bytes, 1 MiB = 1024 KiB, 1 GiB = 1024 MiB
+# 1 KiB = 1024 bytes, 1 MiB = 1024 KiB, 1 GiB = 1024 MiB
 resto2 = bytes_totales
 gib = resto2 // 1073741824
 resto2 = resto2 % 1073741824
