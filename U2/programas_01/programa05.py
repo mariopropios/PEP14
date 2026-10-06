@@ -1,3 +1,8 @@
+"""
+Escribe un programa que pida dos números y que indique cuál es el menor, cuál el mayor
+o que indique que son iguales.
+"""
+
 print("Introduce un número: ")
 n1 = float(input())
 

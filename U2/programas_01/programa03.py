@@ -1,3 +1,8 @@
+"""
+Escribe un programa que pida dos numero y muestre su división. Se deben tener en
+cuenta que no se puede dividir por 0 mostrando en ese caso un aviso.
+"""
+
 print("Introduce un número (dividendo):")
 n1 = float(input())
 
