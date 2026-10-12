@@ -79,7 +79,7 @@ def opcion3():
         base = float(input("Introduce la base: "))
         altura = float(input("Introduce la altura: "))
     area = calcular_area_rectangulo(base, altura)
-    print(f"El área del triángulo es {area}")
+    print(f"El área del rectángulo es {area}")
 
 #----- MAIN
 def main():
