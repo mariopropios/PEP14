@@ -84,7 +84,23 @@ def opcion3():
 #----- MAIN
 def main():
     opcion = 0
-    while()
+    while(opcion != 4):
+        mostrar_menu()
+        opcion = int(input("Introduce una opción: "))
 
+        # validamos la opción
+        while(opcion<1 or opcion>4):
+            print("Opción no valida")
+            opcion = int(input("Introduce una opción: "))
+
+        if(opcion==1):
+            opcion1()
+        elif(opcion==2):
+            opcion2()
+        elif(opcion==3):
+            opcion3()
+
+# ARRANCAMOS EL PROGRAMA
+main()
 
 
