@@ -24,22 +24,12 @@ def coseno(angulo):
     return math.cos(math.radians(angulo))
 
 def raizCuadrada(numero):
-    return math.sqrt
+    return math.sqrt(numero)
 
 def potencia(base,exponente):
     return math.pow(base,exponente)
 
 # VALIDACIÓN LECTURA
-def leerDecimalPositivo(mensaje):
-    while True:
-        try:
-            valor = float(input(mensaje))       
-            if valor > 0:
-                return valor
-            print("El valor debe ser mayor que 0.")
-        except ValueError:
-            print("Eso no es un número válido")
-
 def leerOpcionMenu():
     while True:
         try:
@@ -50,29 +40,48 @@ def leerOpcionMenu():
         except ValueError:
             print("Eso no es un número entero. Inténtalo de nuevo.")
 
+def leerNumero(mensaje):
+    """Pide un número decimal cualquiera (positivo, negativo o cero)."""
+    while True:
+        try:
+            return float(input(mensaje))
+        except ValueError:
+            print("Eso no es un número válido")
+
+def leerNumeroNoNegativo(mensaje):
+    """Pide un número decimal mayor o igual que 0 (para la raíz)."""
+    while True:
+        try:
+            valor = float(input(mensaje))
+            if valor >= 0:
+                return valor
+            print("El valor no puede ser negativo.")
+        except ValueError:
+            print("Eso no es un número válido")
 # PROGRAMA 
 def main():
     menu()
     opcion = leerOpcionMenu()
 
     if opcion == 1:
-        angulo = leerDecimalPositivo("Introduce el ángulo en grados: ")
-        print(f"El seno de {angulo}° es {seno(angulo)}")
+        angulo = leerNumero("Introduce el ángulo en grados: ")
+        print(f"El seno de {angulo}° es {seno(angulo):2f}")
 
     elif opcion == 2:
-        angulo = leerDecimalPositivo("Introduce el ángulo en grados: ")
-        print(f"El coseno de {angulo}° es {coseno(angulo)}")
+        angulo = leerNumero("Introduce el ángulo en grados: ")
+        print(f"El coseno de {angulo}° es {coseno(angulo):.4f}")
 
     elif opcion == 3:
-        numero = leerDecimalPositivo("Introduce un número: ")
-        while numero < 0:                      
-            print("No se puede calcular la raíz de un número negativo.")
-            numero = leerDecimalPositivo("Introduce un número: ")
-        print(f"La raíz cuadrada de {numero} es {raizCuadrada(numero):.2f}")
+        numero = leerNumeroNoNegativo("Introduce un número: ")
+        print(f"La raíz cuadrada de {numero} es {raizCuadrada(numero):.4f}")
 
-    else: # opción 4
-        base = leerDecimalPositivo("Introduce la base: ")
-        exponente = leerDecimalPositivo("Introduce el exponente: ")
-        print(f"{base} elevado a {exponente} es {potencia(base, exponente)}")
+    else:  # opción 4
+        base = leerNumero("Introduce la base: ")
+        exponente = leerNumero("Introduce el exponente: ")
+        try:
+            print(f"{base} elevado a {exponente} es {potencia(base, exponente):.4f}")
+        except (ValueError):
+            print("No se puede calcular esa potencia.")
 
+# ARRANCAR PROGRAMA
 main()
