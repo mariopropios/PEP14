@@ -1,7 +1,3 @@
-# imports de la libreria estandar
-
-# imports de librerias de terceros
-
 # imports de modulos propios
 from matematicas import operaciones
 from matematicas import figuras
