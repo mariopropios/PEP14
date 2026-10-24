@@ -1,4 +1,4 @@
-# imports de modulos 
+# imports de los módulos
 from matematicas import (
     a_binario,
     a_entero,
@@ -13,7 +13,7 @@ from matematicas import (
 )
 
 
-# Definicion de funciones principales
+
 def main():
     """MENU"""
     print("1. Operaciones matematicas")
