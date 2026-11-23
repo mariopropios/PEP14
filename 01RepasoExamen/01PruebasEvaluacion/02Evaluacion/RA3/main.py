@@ -1,6 +1,7 @@
 from cocina.chef import preparar_plato, mostrar_chef
 from cocina.rival import generar_rival, preparar_plato_rival, mostrar_rival
 
+
 def main():
     print("===  DUELO DE COCINA  ===")
 
@@ -50,6 +51,7 @@ def main():
         print(f"¡{nombre_rival} ha vencido a {nombre}!")
     else:
         print("¡Empate!")
+
 
 if __name__ == "__main__":
     main()
